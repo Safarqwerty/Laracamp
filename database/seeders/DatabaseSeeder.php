@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CampTableSeeder::class,
             CampBenefitTableSeeder::class,
+            AdminUserSeeder::class,
         ]);
     }
 }
