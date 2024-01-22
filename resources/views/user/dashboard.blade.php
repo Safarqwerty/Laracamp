@@ -40,7 +40,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="https://wa.me/0895423468666?text=woi saya mau beli kelas {{ $checkout->Camp-title }}" class="btn btn-primary">
+                            <a href="https://wa.me/0895423468666?text=woi saya mau beli kelas {{ $checkout->Camp->title }}" class="btn btn-primary">
                                 Contact Support
                             </a>
                         </td>
