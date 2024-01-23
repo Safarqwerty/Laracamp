@@ -23,7 +23,8 @@ class Store extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email'.Auth::id().',id',
         ];
     }
 }
