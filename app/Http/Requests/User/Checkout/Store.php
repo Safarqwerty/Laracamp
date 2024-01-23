@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User\Checkout;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use Auth;
 
 class Store extends FormRequest
@@ -24,7 +25,13 @@ class Store extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users,email'.Auth::id().',id',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users', 'email')->ignore(Auth::id(), 'id'),
+            ],
+            'occupation' => 'required|string',
+            'card_number' => 'required|numeric|digits_between:8,16',
         ];
     }
 }
