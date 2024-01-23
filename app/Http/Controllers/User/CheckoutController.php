@@ -21,8 +21,12 @@ class CheckoutController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Camp $camp)
+    public function create(Camp $camp, Request $request)
     {
+        if ($camp->isRegistered) {
+            $request->session()->flash('error', "Anda sudah terdaftar di {$camp->title}");
+            return redirect(route('dashboard'));
+        }
         // return $camp;
         return view('checkout.create', [
             'camp' => $camp
