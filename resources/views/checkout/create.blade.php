@@ -70,7 +70,10 @@
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <label class="form-label">CVC</label>
-                                        <input name="cvc" type="number" class="form-control" maxlength="3" />
+                                        <input name="cvc" type="number" class="form-control {{ $errors->has('cvc') ? 'is-invalid' : '' }}" maxlength="3" value="{{ old('cvc') ?: '' }}" />
+                                        @if ($errors->has('cvc'))
+                                            <p class="text-danger">{{ $errors->first('cvc') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
