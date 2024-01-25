@@ -40,6 +40,9 @@ class AfterRegister extends Mailable
     {
         return new Content(
             markdown: 'emails.user.afterRegister', 
+            with: [
+                'user' => $this->user,
+            ]
         );
     }
 
@@ -50,8 +53,6 @@ class AfterRegister extends Mailable
      */
     public function attachments(): array
     {
-        return [
-            'user' => $this->user,
-        ];
+        return [];
     }
 }

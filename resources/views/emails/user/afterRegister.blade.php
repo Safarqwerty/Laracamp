@@ -1,7 +1,7 @@
 <x-mail::message>
 # Welcome
 
-Hi {{ $user->name }}
+Hi {{ $user['name'] }}
 
 The body of your message.
 
