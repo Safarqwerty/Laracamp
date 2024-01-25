@@ -13,7 +13,7 @@ class Checkout extends Model
 
     protected $fillable = ['user_id', 'camp_id', 'card_number', 'expired', 'cvc', 'is_paid'];
 
-    public function SetExpiredAttribute($value)
+    public function setExpiredAttribute($value)
     {
         $this->attributes['expired'] = date('Y-m-t', strtotime($value));
     }
@@ -26,5 +26,15 @@ class Checkout extends Model
     public function Camp(): BelongsTo
     {
         return $this->belongsTo(Camp::class);
+    }
+
+    /**
+     * Get the user that owns the Checkout
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function User(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

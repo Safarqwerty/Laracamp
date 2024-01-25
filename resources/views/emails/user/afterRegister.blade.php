@@ -3,7 +3,7 @@
 
 Hi {{ $user['name'] }}
 
-The body of your message.
+Welcome to Laracamp
 
 <x-mail::button :url="route('login')">
 Login Sekarang
