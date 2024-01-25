@@ -49,7 +49,7 @@
                     @empty
                         <tr>
                             <td colspan="5">
-                                <h3>tidak ada data</h3>
+                                <h3>Data Kosong</h3>
                             </td>
                         </tr>
                     @endforelse
