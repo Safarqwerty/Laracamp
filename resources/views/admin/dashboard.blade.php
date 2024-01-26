@@ -45,7 +45,7 @@
                                         </td>
                                         <td>
                                             @if (!$checkout->is_paid)
-                                                <form action="" method="post">
+                                                <form action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
                                                     @csrf
                                                     <button class="btn btn-primary btn-sm">Set Bayar</button>
                                                 </form>
