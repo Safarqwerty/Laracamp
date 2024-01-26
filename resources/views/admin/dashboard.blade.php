@@ -44,10 +44,12 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <form action="" method="post">
-                                                @csrf
-                                                <button class="btn btn-primary btn-sm">Set Bayar</button>
-                                            </form>
+                                            @if (!$checkout->is_paid)
+                                                <form action="" method="post">
+                                                    @csrf
+                                                    <button class="btn btn-primary btn-sm">Set Bayar</button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty
