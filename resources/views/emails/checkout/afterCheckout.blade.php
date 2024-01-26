@@ -5,8 +5,8 @@ Hi {{ $checkout->User ? $checkout->User->name : 'User' }}
 <br>
 Anda telah mendaftar di kelas <b>{{ $checkout->Camp->title }}</b>, jangan lupa bayar yahh!
 
-<x-mail::button :url="route('user.checkout.invoice', $checkout->id)">
-Get Invoice
+<x-mail::button :url="route('dashboad')">
+My Dashboard
 </x-mail::button>
 
 Thanks,<br>
