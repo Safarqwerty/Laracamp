@@ -18,7 +18,6 @@
                                     <th>Harga</th>
                                     <th>Register</th>
                                     <th>Pembayaran</th>
-                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,19 +36,7 @@
                                             {{ $checkout->created_at->format('M d Y') }}
                                         </td>
                                         <td>
-                                            @if ($checkout->is_paid)
-                                                <span class="badge bg-success">Sudah Bayar</span>
-                                            @else
-                                                <span class="badge bg-danger">Belum Bayar</span>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if (!$checkout->is_paid)
-                                                <form action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
-                                                    @csrf
-                                                    <button class="btn btn-primary btn-sm">Set Bayar</button>
-                                                </form>
-                                            @endif
+                                            <strong>{{ $checkout->payment_status }}</strong>
                                         </td>
                                     </tr>
                                 @empty
