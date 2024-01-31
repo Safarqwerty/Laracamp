@@ -33,9 +33,8 @@ class Store extends FormRequest
                 Rule::unique('users', 'email')->ignore(Auth::id(), 'id'),
             ],
             'occupation' => 'required|string',
-            'card_number' => 'required|numeric|digits_between:8,16',
-            'expired' => 'required|date|date_format:Y-m|after_or_equal:' . $expiredValidation,
-            'cvc' => 'required|numeric|digits:3',
+            'phone' => 'required|string',
+            'address' => 'required|string',
         ];
     }
 }
