@@ -30,7 +30,7 @@
                                             {{ $checkout->Camp->title }}
                                         </td>
                                         <td>
-                                            {{ $checkout->Camp->price }}k
+                                            <strong>Rp {{ number_format($checkout->Camp->price, 0, ',', '.') }}</strong>
                                         </td>
                                         <td>
                                             {{ $checkout->created_at->format('M d Y') }}

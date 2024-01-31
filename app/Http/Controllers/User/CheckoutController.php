@@ -123,7 +123,7 @@ class CheckoutController extends Controller
     {
         $orderId = $checkout->id.'-'.Str::random(5);
         $checkout->midtrans_booking_code = $orderId;
-        $price = $checkout->Camp->price * 1000;
+        $price = $checkout->Camp->price;
 
         $transaction_details = [
             'order_id' => $orderId,

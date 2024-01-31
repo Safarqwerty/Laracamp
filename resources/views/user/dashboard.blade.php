@@ -31,8 +31,8 @@
                             </p>
                         </td>
                         <td>
-                            <strong>${{ $checkout->Camp->price }}k</strong>
-                        </td>
+                            <strong>Rp {{ number_format($checkout->Camp->price, 0, ',', '.') }}</strong>
+                        </td>                        
                         <td>
                             <strong>{{ $checkout->payment_status }}</strong>
                         </td>
